@@ -9,10 +9,7 @@
     <link rel="stylesheet" href="assets/css/main/app.css">
     <link rel="stylesheet" href="assets/css/main/app-dark.css">
     <link rel="icon" href="assets/images/logo/hel.png" type="image/gif" />
-
-
 </head>
-
 <body>
     <div id="app">
         <div id="sidebar" class="active">
@@ -38,8 +35,6 @@
     <div class="sidebar-menu">
         <ul class="menu">
             <li class="sidebar-title">Menu</li>
-            
-
             <li
             class="sidebar-item ">
             <a href="Homepage.php" class='sidebar-link'>
