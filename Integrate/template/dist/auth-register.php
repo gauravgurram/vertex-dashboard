@@ -24,25 +24,25 @@
 
             <form method="POST">
                 <div class="form-group position-relative has-icon-left mb-4">
-                    <input type="text" class="form-control form-control-xl" placeholder="Email" name="email">
+                    <input type="text" class="form-control form-control-xl" placeholder="Email" name="email" required>
                     <div class="form-control-icon">
                         <i class="bi bi-envelope"></i>
                     </div>
                 </div>
                 <div class="form-group position-relative has-icon-left mb-4">
-                    <input type="text" class="form-control form-control-xl" placeholder="Username" name="username">
+                    <input type="text" class="form-control form-control-xl" placeholder="Username" name="username" required>
                     <div class="form-control-icon">
                         <i class="bi bi-person"></i>
                     </div>
                 </div>
                 <div class="form-group position-relative has-icon-left mb-4">
-                    <input type="password" class="form-control form-control-xl" placeholder="Password" name="password1">
+                    <input type="password" class="form-control form-control-xl" placeholder="Password" name="password1" required>
                     <div class="form-control-icon">
                         <i class="bi bi-shield-lock"></i>
                     </div>
                 </div>
                 <div class="form-group position-relative has-icon-left mb-4">
-                    <input type="password" class="form-control form-control-xl" placeholder="Confirm Password" name="password2">
+                    <input type="password" class="form-control form-control-xl" placeholder="Confirm Password" name="password2" required>
                     <div class="form-control-icon">
                         <i class="bi bi-shield-lock"></i>
                     </div>
@@ -73,10 +73,17 @@ if(isset($_POST['submit']))
     $username=$_POST['username'];
     $password1=$_POST['password1'];
     $password2=$_POST['password2'];
+    if(filter_var($email, FILTER_VALIDATE_EMAIL))
+    {
     $sql="insert into register(email,username,password1,password2) values('$email','$username','$password1','$password2')";
     if(mysqli_query($con,$sql))
     {
         header('location:index.html');
+    }
+    }
+    else
+    {
+        echo "<script>alert('Enter valid email id')</script>";
     }
 }
 ?>
