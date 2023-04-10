@@ -15,7 +15,7 @@
 <div class="row h-100">
     <div class="col-lg-5 col-12">
         <div id="auth-left">
-            <a href="index.html"><img src="assets/images/logo/vertex-logo.png" alt="Logo" width="200" height="100"></a>
+            <a href="index.php"><img src="assets/images/logo/vertex-logo.png" alt="Logo" width="200" height="100"></a>
             <h1 class="auth-title">Log in.</h1>
             <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
 
@@ -60,17 +60,19 @@
 </html>
 <?php 
 $con=mysqli_connect("localhost","root","","vertex");
+session_start();
 if(isset($_POST['submit']))
 {
     $username=$_POST['username'];
     $password=$_POST['password'];
+    $_SESSION['username']=$username;
     $sql="select * from register where username='$username'";
     $rs=mysqli_query($con,$sql);
     $rw=mysqli_fetch_row($rs);
     if($username==$rw[2] && $password==$rw[3])
     {
             echo "<script>alert('Login Successfully');</script>";
-            header('location:index.html');
+            header('location:index.php');
     }
     else
     {

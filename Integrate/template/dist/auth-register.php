@@ -17,7 +17,7 @@
 <div class="row h-100">
     <div class="col-lg-5 col-12">
         <div id="auth-left">
-        <a href="index.html"><img src="assets/images/logo/vertex-logo.png" alt="Logo" width="200" height="100"></a>
+        <a href="index.php"><img src="assets/images/logo/vertex-logo.png" alt="Logo" width="200" height="100"></a>
 
             <h1 class="auth-title">Sign Up</h1>
             <p class="auth-subtitle mb-5">Input your data to register to our website.</p>
@@ -78,7 +78,7 @@ if(isset($_POST['submit']))
     $sql="insert into register(email,username,password1,password2) values('$email','$username','$password1','$password2')";
     if(mysqli_query($con,$sql))
     {
-        header('location:index.html');
+        header('location:index.php');
     }
     }
     else

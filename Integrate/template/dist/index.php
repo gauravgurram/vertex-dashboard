@@ -39,7 +39,8 @@
     <div class="sidebar-menu">
         <ul class="menu">
             <li class="sidebar-title">Menu</li>
-            
+            <li class="sidebar-title">Logged By<?php session_start();
+            echo $_SESSION['username'];?></li>
             <li
             class="sidebar-item ">
             <a href="Homepage.php" class='sidebar-link'>
